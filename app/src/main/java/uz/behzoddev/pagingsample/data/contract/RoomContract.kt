@@ -1,6 +1,7 @@
 package uz.behzoddev.pagingsample.data.contract
 
 object RoomContract {
+    const val DATABASE_NAME = "reddit_database"
     object RedditPosts {
         const val TABLE_NAME = "reddit_posts"
         const val POST_KEY = "post_key"
