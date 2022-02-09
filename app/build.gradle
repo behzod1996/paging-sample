@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id ("dagger.hilt.android.plugin")
     id 'kotlin-kapt'
 }
 
@@ -45,21 +46,25 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Coroutines
-    implementation "org.jetbrains.kotlinx.kotlinx-coroutines-android:$coroutines_version"
-    implementation "org.jetbrains.kotlinx.kotlinx-coroutines-core:$coroutines_version"
+    implementation ("org.jetbrains.kotlinx.kotlinx-coroutines-android:$coroutines_version")
+    implementation ("org.jetbrains.kotlinx.kotlinx-coroutines-core:$coroutines_version")
 
     // Room
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    implementation ("androidx.room:room-runtime:$room_version")
+    implementation ("androidx.room:room-ktx:$room_version")
+    kapt ("androidx.room:room-compiler:$room_version")
 
     // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation ("com.squareup.retrofit2:retrofit:$retrofit_version")
     implementation("com.squareup.moshi:moshi:1.10.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:$moshi_version")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.10.0")
-    implementation "com.squareup.retrofit2:converter-moshi:$moshi_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
 
     // Paging library
-    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    implementation ("androidx.paging:paging-runtime-ktx:$paging_version")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
 }
