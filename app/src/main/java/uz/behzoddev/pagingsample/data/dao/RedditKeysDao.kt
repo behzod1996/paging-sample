@@ -9,7 +9,7 @@ import uz.behzoddev.pagingsample.data.models.RedditKeys
 @Dao
 interface RedditKeysDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveRedditKeys(redditKeys: RedditKeys)
+    suspend fun saveRedditKeys(redditKeys: RedditKeys): Long
     @Query("SELECT * FROM reddit_keys ORDER BY keys_id DESC")
     suspend fun getRedditKeys(): List<RedditKeys>
 }

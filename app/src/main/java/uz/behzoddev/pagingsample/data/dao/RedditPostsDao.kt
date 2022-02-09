@@ -11,7 +11,7 @@ import uz.behzoddev.pagingsample.data.models.RedditPost
 interface RedditPostsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun savePosts(redditPosts: List<RedditPost>)
+    suspend fun savePosts(redditPosts: List<RedditPost>): Long
     
     @Query("SELECT * FROM reddit_posts")
     fun getPosts(): PagingSource<Int,RedditPost>
