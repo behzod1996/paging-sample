@@ -5,6 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import timber.log.Timber
 import uz.behzoddev.pagingsample.data.RedditDatabase
 import uz.behzoddev.pagingsample.data.dao.RedditKeysDao
 import uz.behzoddev.pagingsample.data.dao.RedditPostsDao
